@@ -65,7 +65,7 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
     elseif method == "invokeServer" then
         method = "InvokeServer"
     end
-        
+    warn(remotesViewing[instance.ClassName], instance.ClassName, remoteMethods, method)
     if remotesViewing[instance.ClassName] and instance ~= remoteDataEvent and remoteMethods[method] then
         local remote = currentRemotes[instance]
         local vargs = {select(2, ...)}
