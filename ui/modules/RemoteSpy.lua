@@ -238,7 +238,7 @@ local function createConditions(remote)
     local remoteInstanceName = remoteInstance.Name
     local remoteClassName = remoteInstance.ClassName
     local nameLength = TextService:GetTextSize(remoteInstanceName, 18, "SourceSans", constants.textWidth).X + 20
-
+    warn(remoteClassName, "Swagging")
     ConditionsRemote.Icon.Image = icons[remoteClassName]
     ConditionsRemote.Label.Text = remoteInstanceName
     ConditionsRemote.Label.Size = UDim2.new(0, nameLength, 0, 20)
