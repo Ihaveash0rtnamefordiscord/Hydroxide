@@ -74,7 +74,6 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
             remote = Remote.new(instance)
             currentRemotes[instance] = remote
         end
-        warn("This is a little silly test")
 
         local remoteIgnored = remote.Ignored
         local remoteBlocked = remote.Blocked
