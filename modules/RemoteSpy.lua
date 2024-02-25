@@ -120,7 +120,7 @@ for _name, hook in pairs(methodHooks) do
             local success = pcall(checkPermission, instance)
             if (not success) then return originalMethod(...) end
         end
-
+        warn(instance.ClassName)
         if instance.ClassName == _name and remotesViewing[instance.ClassName] and instance ~= remoteDataEvent then
             local remote = currentRemotes[instance]
             local vargs = {select(2, ...)}
