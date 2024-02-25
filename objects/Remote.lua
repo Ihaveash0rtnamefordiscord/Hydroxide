@@ -2,7 +2,7 @@ local Remote = {}
 
 function Remote.new(instance)
     local remote = {}
-
+    warn(instance)
     remote.Instance = instance
     remote.Logs = {}
     remote.Calls = 0
