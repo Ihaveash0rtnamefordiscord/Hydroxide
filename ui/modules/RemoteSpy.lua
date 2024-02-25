@@ -435,7 +435,7 @@ function Log.adjust(log)
     local logIcon = logInstance.Icon
 
     local callWidth = TextService:GetTextSize(logInstance.Calls.Text, 18, "SourceSans", constants.textWidth).X + 10
-    warn(remoteClassName, "Swagger")
+
     local iconPosition = callWidth - (((remoteClassName == "RemoteEvent" or remoteClassName == "BindableEvent" or remoteClassName == "UnreliableRemoteEvent") and 4) or 0)
     local labelWidth = iconPosition + 21
 
@@ -912,7 +912,7 @@ repeatCallContext:SetCallback(function()
     local remoteInstance = selected.remoteLog.Remote.Instance
     local remoteClassName = remoteInstance.ClassName
     local method 
-
+    warn("Swagger pls",remoteClassName, remoteInstance)
     if remoteClassName == "RemoteEvent" or remoteClassName == "UnreliableRemoteEvent" then
         method = "FireServer"
     elseif remoteClassName == "RemoteFunction" then
