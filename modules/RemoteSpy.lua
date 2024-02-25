@@ -49,7 +49,7 @@ local function connectEvent(callback)
         eventSet = true
     end
 end
-
+warn("Module Loaded")
 local nmcTrampoline
 nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
     local instance = ...
@@ -65,7 +65,9 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
     elseif method == "invokeServer" then
         method = "InvokeServer"
     end
-
+    if instance ~= remoteDataEvent then
+        warn("Poggers", instance, instance.ClassName)
+    end
     if remotesViewing[instance.ClassName] and instance ~= remoteDataEvent and remoteMethods[method] then
         local remote = currentRemotes[instance]
         local vargs = {select(2, ...)}
