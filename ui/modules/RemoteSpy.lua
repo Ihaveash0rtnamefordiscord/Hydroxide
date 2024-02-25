@@ -238,7 +238,7 @@ local function createConditions(remote)
     local remoteInstanceName = remoteInstance.Name
     local remoteClassName = remoteInstance.ClassName
     local nameLength = TextService:GetTextSize(remoteInstanceName, 18, "SourceSans", constants.textWidth).X + 20
-    warn(remoteClassName, "Swagging")
+
     ConditionsRemote.Icon.Image = icons[remoteClassName]
     ConditionsRemote.Label.Text = remoteInstanceName
     ConditionsRemote.Label.Size = UDim2.new(0, nameLength, 0, 20)
@@ -435,6 +435,7 @@ function Log.adjust(log)
     local logIcon = logInstance.Icon
 
     local callWidth = TextService:GetTextSize(logInstance.Calls.Text, 18, "SourceSans", constants.textWidth).X + 10
+    warn(remoteClassName, "Swagger")
     local iconPosition = callWidth - (((remoteClassName == "RemoteEvent" or remoteClassName == "BindableEvent" or remoteClassName == "UnreliableRemoteEvent") and 4) or 0)
     local labelWidth = iconPosition + 21
 
