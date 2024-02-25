@@ -74,6 +74,7 @@ nmcTrampoline = hookMetaMethod(game, "__namecall", function(...)
             remote = Remote.new(instance)
             currentRemotes[instance] = remote
         end
+        warn("This is a little silly test")
 
         local remoteIgnored = remote.Ignored
         local remoteBlocked = remote.Blocked
@@ -120,7 +121,7 @@ for _name, hook in pairs(methodHooks) do
             local success = pcall(checkPermission, instance)
             if (not success) then return originalMethod(...) end
         end
-        warn(instance.ClassName)
+
         if instance.ClassName == _name and remotesViewing[instance.ClassName] and instance ~= remoteDataEvent then
             local remote = currentRemotes[instance]
             local vargs = {select(2, ...)}
